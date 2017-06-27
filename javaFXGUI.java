@@ -23,6 +23,7 @@ public class javaFXGUI
     private static TextField uniName;
     private static TextField uniRank; // Initialising the variables for the text boxes
     private static TextField uniPlace;
+    private static TextField uniGrades;
     private static ListView<University> uniListView;
     private static ArrayList<University> UniArrList = new ArrayList<University>();
     public static void main(String args[]){
@@ -105,6 +106,13 @@ public class javaFXGUI
         uniPlace.setPromptText("University Country");
         rootPane.getChildren().add(uniPlace);
         
+        uniGrades = new TextField();
+        uniGrades.setLayoutX(100);
+        uniGrades.setLayoutY(140);
+        uniGrades.setPrefWidth(300);
+        uniGrades.setPromptText("Required Grades of entry");
+        rootPane.getChildren().add(uniGrades);
+        
         Button btn = new Button();
         btn.setText("Print");
         btn.setLayoutX(384);
@@ -116,12 +124,14 @@ public class javaFXGUI
         String uniN = uniName.getText();
         int uniR = Integer.parseInt(uniRank.getText());
         String uniP = uniPlace.getText();
+        String uniG = uniGrades.getText();
         
         System.out.println(uniN);
         System.out.println(uniR);
         System.out.println(uniP);
+        System.out.println(uniG);
         
-        uniArrList.add(new University(uniN, uniR, uniP));
+        uniArrList.add(new University(uniN, uniR, uniP, uniG));
         
         uniListView.getItems().clear();
         
